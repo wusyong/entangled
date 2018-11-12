@@ -24,3 +24,12 @@ CREATE TABLE IF NOT EXISTS iota_milestone (
   hash BLOB NOT NULL UNIQUE,
   delta BLOB
 );
+
+CREATE INDEX IF NOT EXISTS address_index ON iota_transaction(address);
+CREATE INDEX IF NOT EXISTS trunk_index ON iota_transaction(trunk);
+CREATE INDEX IF NOT EXISTS branch_index ON iota_transaction(branch);
+CREATE INDEX IF NOT EXISTS bundle_index ON iota_transaction(bundle);
+CREATE INDEX IF NOT EXISTS tag_index ON iota_transaction(tag);
+CREATE INDEX IF NOT EXISTS transaction_hash_index ON iota_transaction(hash);
+
+CREATE INDEX IF NOT EXISTS milestone_hash_index ON iota_milestone(hash);
